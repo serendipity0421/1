@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>密室逃脫遊戲</title>
+    <style>
+        .room {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>密室逃脫遊戲</h1>
+    <div id="room1" class="room active">
+        <h2>房間 1</h2>
+        <p>題目：如果你有一個 3 公升和一個 5 公升的水壺，如何得到正好 4 公升的水？</p>
+        <input type="text" id="answer1" placeholder="輸入你的答案">
+        <button onclick="checkAnswer(1, '4')">提交答案</button>
+        <button onclick="showHint(1)">提示</button>
+        <p id="hint1" style="display:none;">提示：你需要用 3 公升和 5 公升的水壺來測量。</p>
+    </div>
+    <div id="room2" class="room">
+        <h2>房間 2</h2>
+        <p>題目：一個人站在一個大圓的中心，從圓心走到圓周需要 1 小時。請問他從圓周走回圓心需要多少時間？</p>
+        <input type="text" id="answer2" placeholder="輸入你的答案">
+        <button onclick="checkAnswer(2, '1')">提交答案</button>
+        <button onclick="showHint(2)">提示</button>
+        <p id="hint2" style="display:none;">提示：從圓周走回圓心與從圓心走到圓周所需時間相同。</p>
+    </div>
+    <div id="room3" class="room">
+        <h2>房間 3</h2>
+        <p>題目：有三個箱子，其中一個裝著寶物，箱子上有一個標籤。箱子 A 標籤寫著“在 B 或 C”，箱子 B 標籤寫著“在 A 或 C”，箱子 C 標籤寫著“在 A 或 B”。所有標籤中只有一個是真實的。請問寶物在哪個箱子裡？</p>
+        <input type="text" id="answer3" placeholder="輸入你的答案">
+        <button onclick="checkAnswer(3, 'B')">提交答案</button>
+        <button onclick="showHint(3)">提示</button>
+        <p id="hint3" style="display:none;">提示：根據題目條件，只有一個標籤是真實的。</p>
+    </div>
+    <div id="win" class="room">
+        <h2>恭喜你！你已經贏得了遊戲！</h2>
+    </div>
+    <script>
+        function checkAnswer(room, correctAnswer) {
+            var answer = document.getElementById('answer' + room).value.trim().toUpperCase();
+            if (answer === correctAnswer) {
+                document.getElementById('room' + room).classList.remove('active');
+                if (room < 3) {
+                    document.getElementById('room' + (room + 1)).classList.add('active');
+                } else {
+                    document.getElementById('win').classList.add('active');
+                }
+            } else {
+                alert('答案錯誤，請再試一次！');
+            }
+        }
+
+        function showHint(room) {
+            document.getElementById('hint' + room).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
