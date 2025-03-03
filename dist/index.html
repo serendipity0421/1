@@ -27,27 +27,36 @@
   <hr>
     <div id="room1" class="room active">
         <h2>房間 1</h2>
-        <p>題目：如果你有一個 3 公升和一個 5 公升的水壺，如何得到正好 4 公升的水？</p>
+        <p>題目：在牆上有一個金屬面板，上面刻著四個數字，但它們並不是你需要輸入的密碼。面板上還有一行文字：「我的序列是：第3位大於第1位，第4位等於第2位的兩倍，第1位小於第2位。」你需要根據這些線索來找出正確的四個數字。</p>
         <input type="text" id="answer1" placeholder="輸入你的答案">
-        <button onclick="checkAnswer(1, '4')">提交答案</button>
+        <button onclick="checkAnswer(1, '1236')">提交答案</button>
         <button onclick="showHint(1)">提示</button>
-        <p id="hint1" style="display:none;">提示：你需要用 3 公升和 5 公升的水壺來測量。</p>
+        <p id="hint1" style="display:none;">提示：假設每個數字都是從0到9的整數。</p>
     </div>
     <div id="room2" class="room">
         <h2>房間 2</h2>
-        <p>題目：一個人站在一個大圓的中心，從圓心走到圓周需要 1 小時。請問他從圓周走回圓心需要多少時間？</p>
+        <p>題目：你發現了一張地圖，地圖上有四個特定的符號。每個符號上都有一個字母，並且每個符號上有一組顏色。你發現下方有一個提示：「紅色 = 第2個字母，藍色 = 第1個字母，綠色 = 第3個字母，黃色 = 第4個字母。」
+地圖上的符號顏色和字母如下：
+
+紅色：A
+藍色：C
+綠色：B
+黃色：D
+你需要根據這些顏色和字母順序來解開密碼。</p>
         <input type="text" id="answer2" placeholder="輸入你的答案">
-        <button onclick="checkAnswer(2, '1')">提交答案</button>
+        <button onclick="checkAnswer(2, 'CABD')">提交答案</button>
         <button onclick="showHint(2)">提示</button>
-        <p id="hint2" style="display:none;">提示：從圓周走回圓心與從圓心走到圓周所需時間相同。</p>
+        <p id="hint2" style="display:none;">提示：1.每個顏色代表一個字母的位置。
+          2.從顏色到字母的映射順序非常重要。</p>
     </div>
     <div id="room3" class="room">
         <h2>房間 3</h2>
-        <p>題目：有三個箱子，其中一個裝著寶物，箱子上有一個標籤。箱子 A 標籤寫著“在 B 或 C”，箱子 B 標籤寫著“在 A 或 C”，箱子 C 標籤寫著“在 A 或 B”。所有標籤中只有一個是真實的。請問寶物在哪個箱子裡？</p>
+        <p>題目：在房間的牆上有一面鏡子，鏡子上刻著一行文字：「RFKBA」，並且旁邊有一個提示：「將這些字母反轉。」
+你需要根據這個提示找出反轉後的字母組合，這就是密碼。</p>
         <input type="text" id="answer3" placeholder="輸入你的答案">
-        <button onclick="checkAnswer(3, 'B')">提交答案</button>
+        <button onclick="checkAnswer(3, 'ABKFR')">提交答案</button>
         <button onclick="showHint(3)">提示</button>
-        <p id="hint3" style="display:none;">提示：根據題目條件，只有一個標籤是真實的。</p>
+        <p id="hint3" style="display:none;">提示：字母組合反轉。注意字母的順序。</p>
     </div>
     <div id="win" class="room">
         <h2>恭喜你！你已經贏得了遊戲！</h2>
